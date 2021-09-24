@@ -14,15 +14,41 @@
     
     <!--Responsive celular-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
 
     <Title>Informacion y Contacto</Title>
+
 </head>
 
 <body>
+  <!--NavBar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Beanie</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Info.html">Contacto</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+  <!--Info Page-->
     <div id= "info-container">
     <h1 class ="text-center">Somos</h1>
-        <div class=".container-md">
-            <p class ="text-center"> Una tienda de accesorios para mascotas de todo tipo. Ademas contamos con una fundación de rescate animal, donde rehabilitamos y damos en adopción.</p>
+        <div class=".container-sm p-5">
+            <p class ="text-center"> Una tienda de accesorios para mascotas de todo tipo. Ademas contamos con una fundación de rescate animal, donde rehabilitamos y damos en adopción. 
+             
+            </p>
         </div>
     </div>
 
@@ -43,22 +69,22 @@
           <div class="card-body form">
   
             <!-- Header -->
-            <h3 class="mt-4"><i class="fas fa-envelope pr-2"></i>Contactanos:</h3>
+            <h3 class="mt-4"><i class="fas fa-envelope pl-5 pr-2"></i>Contactanos:</h3>
   
             <!-- Grid row -->
             <div class="row">
   
               <!-- Grid column -->
               <div class="col-md-6">
-                <div class="md-form mb-0 p-3">
-                  <input type="text" id="form-contact-name" class="form-control p-2" placeholder="Nombre">
+                <div class="md-form mb-0 p-3 pl-5">
+                  <input type="text" id="form-contact-name" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2 " placeholder="Nombre*">
                 </div>
               </div>
   
               <!-- Grid column -->
               <div class="col-md-6">
-                <div class="md-form mb-0 p-3">
-                  <input type="text" id="form-contact-email" class="form-control p-2" placeholder="email">
+                <div class="md-form mb-0 p-3 pl-5">
+                  <input type="text" id="form-contact-email" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="email*">
                 </div>
               </div>
               <!-- Grid column -->
@@ -71,16 +97,16 @@
   
               <!-- Grid column -->
               <div class="col-md-6">
-                <div class="md-form mb-0 p-3">
-                  <input type="text" id="form-contact-phone" class="form-control p-2" placeholder="Numero de telefono">
+                <div class="md-form mb-0 p-3 pl-5">
+                  <input type="text" id="form-contact-phone" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="Numero de telefono*">
                 </div>
               </div>
               <!-- Grid column -->
   
               <!-- Grid column -->
               <div class="col-md-6">
-                <div class="md-form mb-0 p-3">
-                  <input type="text" id="form-contact-company" class="form-control p-2" placeholder="Numero Orden">
+                <div class="md-form mb-0 p-3 pl-5">
+                  <input type="text" id="form-contact-company" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="Numero Orden">
                 </div>
               </div>
               <!-- Grid column -->
@@ -93,8 +119,8 @@
   
               <!-- Grid column -->
               <div class="col-md-12">
-                <div class="md-form mb-0 p-3">
-                  <textarea id="form-contact-message" class="form-control md-textarea" rows="3" placeholder="Tu mensaje"></textarea>
+                <div class="md-form mb-0 p-3 pl-5">
+                  <textarea id="form-contact-message" class="form-control md-textarea border-top-0 border-right-0 border-left-0 border border-secondary" rows="3" placeholder="Tu mensaje"></textarea>
                   <a class="btn-floating"><i class="fas fa-paper-plane"></i></a>
                   
                 </div>
