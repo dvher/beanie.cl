@@ -1,0 +1,31 @@
+.form-control {
+  border: 0;
+  outline: none;
+  width: 100%;
+  padding: 7px 0;
+  border-bottom: 1px solid #ccc;
+}
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-floating {
+  width: 80px;
+  height: 80px;
+  background: #009879;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 35px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  transition: background 0.25;
+}
+.btn-floating:active {
+  background: #007d63;
+}
