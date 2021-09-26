@@ -72,19 +72,20 @@
             <h3 class="mt-4"><i class="fas fa-envelope pl-5 pr-2"></i>Contactanos:</h3>
   
             <!-- Grid row -->
+          <form action= "https://formspree.io/f/mzbyolqy" method="POST">
             <div class="row">
   
               <!-- Grid column -->
               <div class="col-md-6">
                 <div class="md-form mb-0 p-3 pl-5">
-                  <input type="text" id="form-contact-name" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2 " placeholder="Nombre*">
+                  <input type="text" name="Nombre" id="form-contact-name" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2 " placeholder="Nombre*" >
                 </div>
               </div>
   
               <!-- Grid column -->
               <div class="col-md-6">
                 <div class="md-form mb-0 p-3 pl-5">
-                  <input type="text" id="form-contact-email" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="email*">
+                  <input type="email" name ="email" id="form-contact-email" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="email*" >
                 </div>
               </div>
               <!-- Grid column -->
@@ -98,7 +99,7 @@
               <!-- Grid column -->
               <div class="col-md-6">
                 <div class="md-form mb-0 p-3 pl-5">
-                  <input type="text" id="form-contact-phone" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="Numero de telefono*">
+                  <input type="number" name="Telefono" id="form-contact-phone" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="Numero de telefono*" >
                 </div>
               </div>
               <!-- Grid column -->
@@ -106,7 +107,7 @@
               <!-- Grid column -->
               <div class="col-md-6">
                 <div class="md-form mb-0 p-3 pl-5">
-                  <input type="text" id="form-contact-company" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="Numero Orden">
+                  <input type="number" name="Numero Orden" id="form-contact-Order" class="form-control border-top-0 border-right-0 border-left-0 border border-secondary p-2" placeholder="Numero Orden">
                 </div>
               </div>
               <!-- Grid column -->
@@ -120,8 +121,8 @@
               <!-- Grid column -->
               <div class="col-md-12">
                 <div class="md-form mb-0 p-3 pl-5">
-                  <textarea id="form-contact-message" class="form-control md-textarea border-top-0 border-right-0 border-left-0 border border-secondary" rows="3" placeholder="Tu mensaje"></textarea>
-                  <a class="btn-floating"><i class="fas fa-paper-plane"></i></a>
+                  <textarea name="Mensaje" id="form-contact-message" class="form-control md-textarea border-top-0 border-right-0 border-left-0 border border-secondary" rows="3" placeholder="Tu mensaje"></textarea>
+                  <button type ="submit" class="btn-floating"><i class="fas fa-paper-plane"></i></button>
                 </div>
               </div>
               
@@ -129,7 +130,7 @@
   
             </div>
             <!-- Grid row -->
-  
+          </form>
           </div>
   
         </div>
