@@ -45,6 +45,7 @@
   position: absolute;
   bottom: 0px;
   right: 0px;
+  border: none;
 }
 .btn-floating:active {
   background: #24b3a8;
