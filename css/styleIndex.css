@@ -32,7 +32,12 @@
 }
 
 .card-img-top{
-    /*height: max 200px !important;
-    width: max 200px !important;*/
+    height: 200px !important;
+    width: auto !important;
+}
+
+#descripcion{
+  height:  100px !important;
+  min-width: 100px !important;
 }
 
