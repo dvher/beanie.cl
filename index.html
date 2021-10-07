@@ -4,11 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+   
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link href="./css/styleIndex.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
+    
+
     <title>Beanie.cl</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"> 
   </head>
@@ -24,14 +26,24 @@
               <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="productos.html">Productos</a>
+              <a class="nav-link" href="#productos">Productos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Info.html">Contacto</a>
             </li>
           </ul>
-          <button type="button" class="btn btn-light"><i class="icon ion-md-person mr-2"></i>Iniciar sesión</button>
-          <button type="button" class="btn btn-light">Registrarse</button>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <button type="button" class="btn btn-light"><i class="icon ion-md-cart mr-2"></i>Ver carrito</button>
+            </li>
+            <li class="nav-item active">
+              <button type="button" class="btn btn-light"><i class="icon ion-md-person mr-2"></i>Iniciar sesión</button>
+            </li>
+            <li class="nav-item active">
+              <button type="button" class="btn btn-light">Registrarse</button>
+            </li>
+            
+          </ul>
         </div>
     </nav>
 
@@ -41,23 +53,27 @@
     </div>
 
 
-    <div class="container mt-5" id="productos">
+    <!--<div class="container mt-5 mb-5" id="productos">-->
+    <div class="container-fluid" id="productos">
+
+      <h1 class="text-center mb-5 pt-5 display-1">Productos</h1>
+
       <div class="row row-cols-12 row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2"> 
 
           <div class="col mb-4">
             <div class="card h-100">
-              <div id="imgContainer">
-              <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/casaPerro.jpg" >
+              <div class="" id="imgContainer" >
+                <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/casaPerro.jpg" >
               </div>
               <div class="card-body">
-              </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                <div class="text-center" id="buttonContainer">
+                  <a href="" class="card-title text-dark font-weight-bold"> Casa de perro</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -68,32 +84,14 @@
               <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/comidaGato.jpg" >
               </div>
               <div class="card-body">
-              </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="card h-100">
-              <div id="imgContainer">
-              <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/colonia.jpg" >
-              </div>
-              <div class="card-body">
-              </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                <div class="text-center" id="buttonContainer">
+                  <a href="" class="card-title text-dark font-weight-bold"> Casa de perro</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -104,14 +102,32 @@
               <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/comidaPerro.jpg" >
               </div>
               <div class="card-body">
+                <div class="text-center" id="buttonContainer">
+                  <a href="" class="card-title text-dark font-weight-bold"> Casa de perro</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                </div>
               </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <div id="imgContainer">
+                <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/colonia.jpg" >
+              </div>
+              <div class="card-body">
+                <div class="text-center" id="buttonContainer">
+                  <a href="" class="card-title text-dark font-weight-bold"> Casa de perro</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -122,32 +138,14 @@
               <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/casaPerro.jpg" >
               </div>
               <div class="card-body">
-              </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="card h-100">
-              <div id="imgContainer">
-              <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/casaPerro.jpg" >
-              </div>
-              <div class="card-body">
-              </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                <div class="text-center" id="buttonContainer">
+                  <a href="" class="card-title text-dark font-weight-bold"> Casa de perro</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -158,14 +156,14 @@
               <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/casaPerro.jpg" >
               </div>
               <div class="card-body">
-              </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                <div class="text-center" id="buttonContainer">
+                  <a href="" class="card-title text-dark font-weight-bold"> Casa de perro</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -176,17 +174,18 @@
               <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/casaPerro.jpg" >
               </div>
               <div class="card-body">
-              </div>
-              <div class="text-center" id="buttonContainer">
-                <a href="" class="card-title text-dark"> Casa de perro</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1"> Descripción de la casa, escribo a modo de prueba.</p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 mb-3">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                <div class="text-center" id="buttonContainer">
+                  <a href="" class="card-title text-dark font-weight-bold"> Casa de perro</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i class="icon ion-md-pricetag"></i></button>
+                </div>
               </div>
             </div>
           </div>
+          
       </div>
     </div>
     
