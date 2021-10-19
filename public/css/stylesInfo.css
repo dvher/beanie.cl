@@ -26,7 +26,7 @@
 }
 
 .title {
-  font-family: "Lodrina";
+  font-family: "Pangolin";
   font-size: 75px;
 }
 
@@ -56,9 +56,6 @@ input:focus {
   -webkit-appearance: none;
 }
 
-.red-social{
-
-    cursor: pointer;
-
+.red-social {
+  cursor: pointer;
 }
-

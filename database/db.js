@@ -1,4 +1,4 @@
-//coneccion a la base de datos
+//conexion a la base de datos
 
 const mysql = require("mysql");
 
@@ -14,7 +14,6 @@ connection.connect((err) => {
     console.log(err);
     return;
   }
-  console.log("Conectado a la base de datos.");
 });
 
 module.exports = connection;
