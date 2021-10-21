@@ -1,0 +1,1 @@
+//Imprime los productos del carrito en la seccion ver carrito
