@@ -3,10 +3,10 @@
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  pass: process.env.DB_PASS,
-  database: process.env.DB_DATABASE,
+  host: 'localhost'/*process.env.DB_HOST*/,
+  user: 'root', //tira error al setearlo desde .env y aparee vacio
+  pass: ''/*process.env.DB_PASS*/,
+  database: 'beanieDB'/*process.env.DB_DATABASE*/,
 });
 
 connection.connect((err) => {
