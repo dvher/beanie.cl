@@ -48,6 +48,9 @@
         </li>
 
       </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" id="formulario" type="search" placeholder="Buscar" aria-label="Buscar">
+      </form>
     </div>
   </nav>
 
@@ -67,7 +70,7 @@
 
     <h1 class="text-center mb-5 pt-5 display-1">Productos</h1>
 
-    <div class="row row-cols-12 row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2">
+    <div class="row row-cols-12 row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2" id="realiza_busqueda">
 
       <div class="col mb-4">
         <div class="card h-100">
@@ -268,6 +271,60 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
   <script src="./js/index.js"></script>
+  
+    <script>
+    const productos = [
+      {nombre: 'Casa de perro', img: '/img/productosEjemplo/casaPerro.jpg'},
+      {nombre: 'Comida de perro', img: '/img/productosEjemplo/comidaPerro.jpg'},
+      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg'},
+    ]
+
+    const formulario = document.querySelector('#formulario');
+    const boton = document.querySelector('#boton');
+    const buscar = document.querySelector('#realiza_busqueda');
+
+    const filtrar = ()=>{
+      //const content = element.innerHTML;
+      document.getElementById('realiza_busqueda').innerHTML = '';
+      
+      const texto = formulario.value.toLowerCase();
+      for(let producto of productos){
+        let nombre = producto.nombre.toLowerCase();
+        if(nombre.indexOf(texto) !== -1){
+          buscar.innerHTML += `
+          <div class="col mb-4">
+            <div class="card h-100">
+              <div class="" id="imgContainer">
+                <img class="card-img-top" alt="Imagen producto" src="${producto.img}">
+              </div>
+              <div class="card-body d-flex align-items-end">
+                <div class="text-center" id="buttonContainer">
+                  <a href="#" class="card-title text-dark font-weight-bold"> ${producto.nombre}</a>
+                  <p id="precio" class="card-price"></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a
+                      modo de prueba.</small></p>
+                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i
+                      class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+                  <br>
+                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i
+                      class="icon ion-md-pricetag"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          `
+        }
+        if(buscar.innerHTML == ''){
+          buscar.innerHTML += `
+            <h2>NO SE ENCONTRARON COINCIDENCIAS PARA LA BÚSQUEDA REALIZADA</h2>
+          `
+        }
+      }
+    }
+
+    formulario.addEventListener('keyup', filtrar);    
+    
+  </script>
 </body>
 
 </html>
