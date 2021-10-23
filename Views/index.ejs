@@ -272,11 +272,17 @@
     crossorigin="anonymous"></script>
   <script src="./js/index.js"></script>
   
-    <script>
+      <script>
     const productos = [
-      {nombre: 'Casa de perro', img: '/img/productosEjemplo/casaPerro.jpg'},
-      {nombre: 'Comida de perro', img: '/img/productosEjemplo/comidaPerro.jpg'},
-      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg'},
+      {nombre: 'Casa de perro', img: '/img/productosEjemplo/casaPerro.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba'},
+      {nombre: 'Colonia para mascota', img: '/img/productosEjemplo/colonia.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
+      {nombre: 'Comida de perro', img: '/img/productosEjemplo/comidaPerro.jpg', descrip: 'Descripción corta.'},
+      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
+      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
+      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
+      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
+      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
+      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
     ]
 
     const formulario = document.querySelector('#formulario');
@@ -301,8 +307,7 @@
                 <div class="text-center" id="buttonContainer">
                   <a href="#" class="card-title text-dark font-weight-bold"> ${producto.nombre}</a>
                   <p id="precio" class="card-price"></p>
-                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> Descripción de la casa, escribo a
-                      modo de prueba.</small></p>
+                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> ${producto.descrip}</small></p>
                   <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i
                       class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
                   <br>
@@ -314,11 +319,11 @@
           </div>
           `
         }
-        if(buscar.innerHTML == ''){
-          buscar.innerHTML += `
-            <h2>NO SE ENCONTRARON COINCIDENCIAS PARA LA BÚSQUEDA REALIZADA</h2>
-          `
-        }
+      }
+      if(buscar.innerHTML == ''){
+        buscar.innerHTML += `
+          <h2>PRODUCTO NO ENCONTRADO</h2>
+        `
       }
     }
 
