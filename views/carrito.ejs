@@ -1,2 +1,106 @@
 <!--Página que muestra el carrito -->
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no">
+
+    
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+
+    <!-- Scroll-->
+
+   
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons-->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    
+    <!-- Hoja de estilos-->
+    <link rel="stylesheet" href="../css/styleCarrito.css"></link>  
+    
+    <!-- Aparece en la pestaña -->
+    <title>Toldos Roberto</title>
+
+  </head>
+  <body>
+
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+  
+    </div>
+
+    <section id="carro">
+    <div class="containter">
+        <div class="content-center topmargin-lg">
+          <h1 class="mb-5">Carro de compras</h1>
+          <!-- <script src="ver_carro.js"></script> -->
+        </div>
+      </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h3 class="subtitulo-carro">Productos en el carro</h3>
+              <div id="productos" class="row row-cols-12 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+
+                  <template id="template-card">
+                        <div class="col mb-4">
+                            <div class="card h-100">
+                                <div id="imgContainer">
+                                    <img class="card-img-top" alt="Imagen producto" src="catálogo1.jpg" > 
+                                </div>
+                                <div class="card-body">
+                                </div>
+                                <div id="buttonContainer">
+                                    <a id="" href="" class="card-title"> Titulo </a>
+                                    <p id="precio" class="card-price">$-</p>
+                                    <p class="cantidad">Cantidad</p>
+                                    <input id="cantidad" type="number" value="1" min="1" max="100" step="1"/>
+                                    <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-3 ">Ver detalles<i class="icon ion-md-pricetag"></i></button>
+                                    <button type="button" class="btn btn-danger btn-sm mt-3 eliminar">Eliminar</button>
+                                  </div>
+                            </div>
+                        </div>
+                  </template>
+                  
+              </div>
+            </div>
+
+            <div class="col">
+              <h3 class="subtitulo-carro">Finalizar pedido</h3>
+              <p class="text-light mt-5">Presione el botón comprar para ser rederigido al sistema de pago</p>
+
+              <button type="submit" class="btn btn-warning mt-3">Comprar</button>
+
+            </div>
+          </div>
+    </section>
+
+      
+      <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" 
+      crossorigin="anonymous"></script>
+
+
+      <script src="verCarrito.js"></script>
+      <script src="src/bootstrap-input-spinner.js"></script>
+      <script>
+          $("input[type='number']").inputSpinner();
+      </script>
+
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>

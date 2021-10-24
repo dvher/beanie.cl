@@ -24,7 +24,7 @@ router.get("/Registro.ejs", (req, res) => {
 });
 
 router.get("/carrito.ejs", (req, res) => {
-  res.render("carito");
+  res.render("carrito");
 });
 
 //Conexion entre actions y metodos de los controllers
