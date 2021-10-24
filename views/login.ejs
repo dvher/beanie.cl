@@ -82,6 +82,22 @@
 	</section>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+	<% if(alert) { %>
+		<script>
+			Swal.fire({
+				title: '<%= alertTitle %>',
+				text: '<%= alertMessage %>',
+				icon: '<%= alertIcon %>',
+				showConfirmButton: <%= showConfirmButton %>,
+				timer: <%= timer %>
+			}).then(()=>{
+				window.location ='/<%= ruta %>'
+			})
+
+		</script>
+
+	<% } %>	
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>

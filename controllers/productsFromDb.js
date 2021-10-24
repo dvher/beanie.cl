@@ -8,7 +8,7 @@ exports.getProducts = async (req, res) => {
         if (error) {
           console.log(error);
         }
-        console.log(results)
+        //console.log(results)
         res.render("index", {products:results});
       }
     );

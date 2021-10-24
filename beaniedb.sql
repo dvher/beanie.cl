@@ -129,7 +129,7 @@ CREATE TABLE `producto` (
 
 CREATE TABLE `usuario` (
   `mail` varchar(50) NOT NULL,
-  `pass` varchar(30) NOT NULL,
+  `pass` varchar(250) NOT NULL,
   `admin` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -235,3 +235,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+insert into usuario (mail,pass,admin)
+values ("abc@mail.com", "1234", 0)

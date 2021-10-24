@@ -40,12 +40,19 @@
         <li class="nav-item active">
           <button type="button" class="btn btn-light"><i class="icon ion-md-cart mr-2"></i>Ver carrito</button>
         </li>
+        <% if(!user) { %>
         <li class="nav-item active">
           <a href="/login.ejs" class="nav-link"><i class="icon ion-md-person mr-2"></i>Iniciar sesión</a>
         </li>
         <li class="nav-item active">
           <a href="/Registro.ejs" class="nav-link">Registrarse</a>
         </li>
+        <% }else{ %>
+          <li class="nav-item active">
+            <a href= "logout" class="nav-link" >Cerrar sesion</a>
+          </li>
+        <% } %>
+        
 
       </ul>
       <form class="d-flex">

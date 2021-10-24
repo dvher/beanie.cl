@@ -10,12 +10,12 @@ const { nextTick } = require("process");
 exports.register = async (req, res) => {
   try {
     //Obteniendo los parametros desde el body
-    const email = req.body.email;
+    const mail = req.body.email;
     const pass = req.body.pass;
     let passhash = await bcryptjs.hash(pass, 8);
 
     //Query
-    connection.query("INSERT INTO user SET ?",{ user: email, pass: passhash },(error, results) => {
+    connection.query("INSERT INTO usuario SET ?",{ mail: mail, pass: passhash , admin:0},(error, results) => {
         if (error) {
           console.log(error);
         }
@@ -27,54 +27,54 @@ exports.register = async (req, res) => {
   }
 };
 
-/*exports.login = async (req, res) => {
+exports.login = async (req, res) => {
   try {
-    const email = req.body.email;
+    const mail = req.body.email;
     const pass = req.body.pass;
 
-    if (!email || !pass) {
+    if (!mail || !pass) {
       res.render("login.ejs", {
         alert: true,
         alertTitle: "Advertencia",
-        AlertMessage: "Ingrese usuario y contrasena",
-        AlertIcon: "Info",
+        alertMessage: "Ingrese usuario y contrasena",
+        alertIcon: "Info",
         showConfirmButton: true,
         timer: false,
         ruta: "login.ejs",
       });
 
     } else {
-      connection.query("SELECT * FROM user WHERE user = ?",[email],async (error, results) => {
+      connection.query("SELECT * FROM usuario WHERE mail= ?",[mail],async (error, results) => {
           if (results.length == 0 ||!(await bcryptjs.compare(pass, results[0].pass))) {
             res.render("login.ejs", {
               alert: true,
               alertTitle: "Error",
-              AlertMessage: "Ususrio y/o contrasena incorrectos",
-              AlertIcon: "error",
+              alertMessage: "Usuario y/o contrasena incorrectos",
+              alertIcon: "error",
               showConfirmButton: true,
               timer: false,
               ruta: "login.ejs",
             });
           
           }else{
-            const id= results[0].id
+            const id= results[0].mail
             const token = jwt.sign({id:id}, process.env.JWT_SECRETO,{
               expiresIn:process.env.JWT_EXPIRACION
             })
-            console.log("token:" + token +" usuario: "+ email)
+            console.log("token:" + token +" usuario: "+ mail)
             const cookiesOptions = {
-              expires: new Date(Date.now()+process.env.JWT_COOKIE_EXPIRACION *24*60*60*1000),
+              expires: new Date(Date.now()+process.env.JWT_COOKIE_EXPIRACION * 24 * 60 * 60 * 1000),
               httpOnly:true
             }
             res.cookie('jwt',token,cookiesOptions)
             res.render('login.ejs',{
               alert: true,
               alertTitle: "Conexion exitosa",
-              AlertMessage: "Inicio de sesion",
-              AlertIcon: "success",
+              alertMessage: "Inicio de sesion",
+              alertIcon: "success",
               showConfirmButton: false,
-              timer: 10000,
-              ruta: "/",
+              timer: 800,
+              ruta: "",
             })
           }
         }
@@ -83,17 +83,17 @@ exports.register = async (req, res) => {
   } catch (error) { console.log(error)}
 };
 
-exports.isAuth = async(req,res)=>{
+exports.isAuth = async(req,res,next)=>{
 
   if(req.cookies.jwt){
     try {
       const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO)
 
-      connection.query('SELECT * FROM user WHERE id = ?', [decoded.id],(error, results)=>{
+      connection.query('SELECT * FROM usuario WHERE mail = ?', [decoded.id],(error, results)=>{
         if(!results){
           return next()
         }
-        req.email = results[0]
+        user = results[0]
         return next()
       })
 
@@ -111,4 +111,4 @@ exports.isAuth = async(req,res)=>{
 exports.logout = (req,res)=>{
   res.clearCookie('jwt')
   return res.redirect('/')
-}*/
+}

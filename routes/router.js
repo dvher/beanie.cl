@@ -7,7 +7,7 @@ const authController = require("../controllers/authController");
 const productsFromDb = require("../controllers/productsFromDb");
 
 //Rutas de las vistas
-router.get("/", /*authController.isAuth,*/productsFromDb.getProducts,(req, res) => {
+router.get("/", authController.isAuth,productsFromDb.getProducts,(req, res) => {
   res.render("index");
 });
 
@@ -16,17 +16,15 @@ router.get("/Info.ejs", (req, res) => {
 });
 
 router.get("/login.ejs", (req, res) => {
-  res.render("login",/*{alert:false}*/);
+  res.render("login",{alert:false});
 });
 
-router.get("/registro.ejs", (req, res) => {
-  res.render("registro");
+router.get("/Registro.ejs", (req, res) => {
+  res.render("Registro");
 });
-
-
 
 //Conexion entre actions y metodos de los controllers
-/*router.post("/registro", authController.register);
+router.post("/registro", authController.register);
 router.post("/login", authController.login);
-router.get("/logout", authController.logout);*/
+router.get("/logout", authController.logout);
 module.exports = router;
