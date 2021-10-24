@@ -1,3 +1,8 @@
-import productsFromDb from './productsFromDb';
 
-console.log(productsFromDb())
+$.ajax({
+    url: "/api/productos",
+    type: "GET",
+}).done(function (data) {
+    console.log(data)
+});
+

@@ -1,12 +1,17 @@
+const { json } = require("express");
 const connection = require("../database/db");
 
-exports.productsFromDb = async () => {
+exports.productsFromDb = async (req, res) => {
     try {
-      connection.query("SELECT * FROM producto",(error, results) => {
+      connection.query("SELECT * FROM producto",(error, products) => {
           if (error) {
             console.log(error);
           }
-          return results
+
+          res.render("index",{products: products.rows})
+
+          //console.log(results.rows);
+          
           //const data = results
           //console.log(data[0])
           //console.log(data[0].descripcion)
@@ -20,25 +25,5 @@ exports.productsFromDb = async () => {
     }
   }
 
- // add()
-  //console.log(add)
-
-
-  /*
-const mysql = require("mysql");
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', 
-  pass: '',
-  database: 'beanieDB',
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-});
-
-*/
+  //console.log(productsFromDb)
+//productsFromDb()
