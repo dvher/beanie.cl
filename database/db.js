@@ -7,6 +7,7 @@ const connection = mysql.createConnection({
   user: 'root' /*process.env.DB_PASS*/, //tira error al setearlo desde .env y aparee vacio
   pass: ''/*process.env.DB_PASS*/,
   database: 'beanieDB'/*process.env.DB_DATABASE*/,
+  port:3306
 });
 
 connection.connect((err) => {
@@ -14,6 +15,7 @@ connection.connect((err) => {
     console.log(err);
     return;
   }
+  console.log("Connected!");
 });
 
 module.exports = connection;

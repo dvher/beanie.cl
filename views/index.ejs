@@ -14,7 +14,7 @@
 
 
   <title>Beanie.cl</title>
-  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"> 
 </head>
 
 <body>
@@ -64,63 +64,34 @@
   <!--<div class="container-fluid" id="productos"> -->
 
 
-
-
   <div id="productos" class="container-fluid text-center">
 
     <h1 class="text-center mb-5 pt-5 display-1">Productos</h1>
 
     <div class="row row-cols-12 row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2" id="realiza_busqueda">
-      <!--
+      
       <div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <div class="" id="imgContainer">
-              <img class="card-img-top" alt="Imagen producto" src="./img/productosEjemplo/casaPerro.jpg">
-            </div>
-            <div class="card-body d-flex align-items-end">
-              <div class="text-center" id="buttonContainer">
-                <a href="#" class="card-title text-dark font-weight-bold">Nombre producto</a>
-                <p id="precio" class="card-price"></p>
-                <p id="descripcion" class="card-text mt-1 text-justifycenter"><small>Descripcion del producto</small></p>
-                <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro<i
-                    class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                <br>
-                <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i
-                    class="icon ion-md-pricetag"></i></button>
-              </div>
+         <div class="col mb-4">
+        <div class="card h-100">
+          <div class="" id="imgContainer">
+            <img class="card-img-top" alt="Imagen producto" src= "<%= products[0].ruta_img %>" />
+          </div>
+          <div class="card-body d-flex align-items-end">
+            <div class="text-center" id="buttonContainer">
+              <a href="#" class="card-title text-dark font-weight-bold"> <%= products[0].nombre %> </a>
+              <p id="precio" class="card-price"> <%= products[0].precio %> </p>
+              <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> <%= products[0].descripcion %> </small></p>
+              <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro<i
+                  class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
+              <br>
+              <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i
+                  class="icon ion-md-pricetag"></i></button>
             </div>
           </div>
         </div>
       </div>
-    -->
-
-    <p><%= products[i].descripcion %></p>
-
-    <!--
-      <% for(var i=0; i < products.length; i++) { %>
-        <div>
-          <div class="col mb-4">
-            <div class="card h-100">
-              <div class="" id="imgContainer">
-                <img class="card-img-top" alt="Imagen producto" src="<%= products[i].ruta_img %>">
-              </div>
-              <div class="card-body d-flex align-items-end">
-                <div class="text-center" id="buttonContainer">
-                  <a href="#" class="card-title text-dark font-weight-bold">products[i].nombre</a>
-                  <p id="precio" class="card-price"></p>
-                  <p id="descripcion" class="card-text mt-1 text-justifycenter"><small>Descripcion del producto</small></p>
-                  <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro<i
-                      class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
-                  <br>
-                  <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i
-                      class="icon ion-md-pricetag"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% } %>-->
+      </div>
+    
 
     </div>
   </div>
@@ -166,7 +137,7 @@
           <div class="col mb-4">
             <div class="card h-100">
               <div class="" id="imgContainer">
-                <img class="card-img-top" alt="Imagen producto" src="${producto.img}">
+                <img class="card-img-top" alt="Imagen producto" src="$ {producto.img}">
               </div>
               <div class="card-body d-flex align-items-end">
                 <div class="text-center" id="buttonContainer">

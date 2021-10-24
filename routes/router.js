@@ -7,15 +7,13 @@ const authController = require("../controllers/authController");
 const productsFromDb = require("../controllers/productsFromDb");
 
 //Rutas de las vistas
-router.get("/", /*authController.isAuth,*/(req, res) => {
-  res.render("index.ejs");
+router.get("/", /*authController.isAuth,*/productsFromDb.getProducts,(req, res) => {
+  res.render("index");
 });
 
 router.get("/Info.ejs", (req, res) => {
   res.render("Info");
 });
-
-router.get("/index.ejs", productsFromDb.productsFromDb);
 
 router.get("/login.ejs", (req, res) => {
   res.render("login",/*{alert:false}*/);
