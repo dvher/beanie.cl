@@ -38,7 +38,7 @@ section{
 .topmargin-xs{
     margin-top: 15px;
 }
-
+/*
 .navbar{
     background-color: #ffffff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
@@ -55,7 +55,7 @@ section{
 .navbar-toggler{
     font-size: 35px;
 }
-
+*/
 #carro{
     background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
     padding-top: 90px;
