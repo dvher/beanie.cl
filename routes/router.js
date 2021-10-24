@@ -23,6 +23,10 @@ router.get("/Registro.ejs", (req, res) => {
   res.render("Registro");
 });
 
+router.get("/carrito.ejs", (req, res) => {
+  res.render("carito");
+});
+
 //Conexion entre actions y metodos de los controllers
 router.post("/registro", authController.register);
 router.post("/login", authController.login);
