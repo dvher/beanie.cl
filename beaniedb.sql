@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2021 a las 18:28:11
+-- Tiempo de generación: 24-10-2021 a las 20:41:14
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.8
 
@@ -121,6 +121,13 @@ CREATE TABLE `producto` (
   `descuento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`idProducto`, `descripcion`, `ruta_img`, `nombre`, `precio`, `stock`, `descuento`) VALUES
+(1, 'Casa de perro', './img/productosEjemplo/casaPerro.jpg', 'Casa de perro', 19990, 10, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -129,9 +136,16 @@ CREATE TABLE `producto` (
 
 CREATE TABLE `usuario` (
   `mail` varchar(50) NOT NULL,
-  `pass` varchar(250) NOT NULL,
+  `pass` varchar(255) NOT NULL,
   `admin` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`mail`, `pass`, `admin`) VALUES
+('s@gmail.com', '$2a$08$YCVW/X.qKuHYv/v6fTcsEO47Ewl52C64KiGfJTVaTWU5/wsgzn4vq', b'0');
 
 --
 -- Índices para tablas volcadas
@@ -229,11 +243,9 @@ ALTER TABLE `opinion`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-insert into usuario (mail,pass,admin)
-values ("abc@mail.com", "1234", 0)
