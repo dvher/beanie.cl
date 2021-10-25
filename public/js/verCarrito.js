@@ -12,7 +12,6 @@ const data = Carro.obtener();
 
 const printCards = data => {
     data.forEach(producto => {
-        console.log(producto); //BORRARRRRR
         templateCard.querySelector('a').textContent = producto.nombre;
         templateCard.querySelector('a').id = producto.id;
         //para obtener el dominio

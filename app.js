@@ -27,6 +27,13 @@ app.use(express.static('js'));
 //Llamando al router
 app.use("/", require("./routes/router"));
 
+//jquery
+
+const { JSDOM } = require( "jsdom" );
+const { window } = new JSDOM( "" );
+const $ = require( "jquery" )( window );
+
+
 app.listen(3000, () => {
   console.log("Server running in http://localhost:3000");
 });
