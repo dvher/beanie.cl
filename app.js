@@ -21,6 +21,9 @@ dotenv.config({ path: "./env/.env" });
 //cookies
 app.use(cookieParser());
 
+//js
+app.use(express.static('js'));
+
 //Llamando al router
 app.use("/", require("./routes/router"));
 
