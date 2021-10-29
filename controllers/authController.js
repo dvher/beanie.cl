@@ -15,13 +15,16 @@ exports.register = async (req, res) => {
     let passhash = await bcryptjs.hash(pass, 8);
 
     //Query
+  
     connection.query("INSERT INTO usuario SET ?",{ mail: mail, pass: passhash , admin:0},(error, results) => {
         if (error) {
           console.log(error);
         }
-        res.redirect("/");
-      }
-    );
+          res.redirect("login.ejs");
+      });
+
+     
+    
   } catch (err) {
     console.log(err);
   }
@@ -57,11 +60,11 @@ exports.login = async (req, res) => {
             });
           
           }else{
-            const id= results[0].mail
+            const id = results[0].mail
             const token = jwt.sign({id:id}, process.env.JWT_SECRETO,{
               expiresIn:process.env.JWT_EXPIRACION
             })
-            console.log("token:" + token +" usuario: "+ mail)
+            //console.log("token:" + token +" usuario: "+ mail)
             const cookiesOptions = {
               expires: new Date(Date.now()+process.env.JWT_COOKIE_EXPIRACION * 24 * 60 * 60 * 1000),
               httpOnly:true
@@ -83,27 +86,55 @@ exports.login = async (req, res) => {
   } catch (error) { console.log(error)}
 };
 
-exports.isAuth = async(req,res,next)=>{
-
+exports.isAuth = async (req,res,next)=>{
+  console.log(jwt.verify(req.cookies.jwt, process.env.JWT_SECRETO))
+  
   if(req.cookies.jwt){
     try {
-      const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO)
-
-      connection.query('SELECT * FROM usuario WHERE mail = ?', [decoded.id],(error, results)=>{
+      const decodificada= await promisify(jwt.verify(req.cookies.jwt, process.env.JWT_SECRETO))
+      console.log(jwt.verify(req.cookies.jwt, process.env.JWT_SECRETO))
+      connection.query('SELECT * FROM usuario WHERE mail = ?', [decodificada.id],(error, results)=>{
         if(!results){
+          
           return next()
         }
-        user = results[0]
+        
+        user=true;
         return next()
       })
 
     } catch (error) {
-      console.log(error)
+      user=false
+      
       return next()
     }
 
   }else{
-    res.redirect('/login.ejs')
+    
+    next()
+  }
+}
+
+exports.requiteAuth = function(req,res,next){
+
+  const token = req.cookies.jwt;
+  
+  if(token){
+    jwt.verify(token, 'clavesecreta', (err, decodedToken)=>{
+
+      if(err){
+        console.log(err.message);
+        user=true
+        next();
+      }else{
+        console.log(decodedToken);
+        user=true
+        next();
+      }
+    })
+
+  }else{
+    user=false
     next()
   }
 }

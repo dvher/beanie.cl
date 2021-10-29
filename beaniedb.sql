@@ -114,7 +114,7 @@ CREATE TABLE `opinion` (
 CREATE TABLE `producto` (
   `idProducto` int(11) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
-  `ruta_img` varchar(100) NOT NULL,
+  `ruta_img` varchar(250) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `precio` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
@@ -249,3 +249,7 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO producto (descripcion,ruta_img,nombre,precio,stock,descuento)
+VALUES ("Comida", "https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg", "Comida Hamster", 3000,26,0);
