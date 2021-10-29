@@ -252,4 +252,4 @@ COMMIT;
 
 
 INSERT INTO producto (descripcion,ruta_img,nombre,precio,stock,descuento)
-VALUES ("Comida", "https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg", "Comida Hamster", 3000,26,0);
+VALUES ("Comida para perro", "https://243440-749267-raikfcquaxqncofqfm.stackpathdns.com/tienda/12648-home_default/medium-puppy.jpg", "Comida de Perro", 26000,10,10);

@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">Beanie.cl</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,23 +76,23 @@
 
     <h1 class="text-center mb-5 pt-5 display-1">Productos</h1>
 
-    <div class="row row-cols-12 row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2" id="realiza_busqueda">
+    <div class="row row-cols-12 row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 " id="realiza_busqueda">
       
         <% for(var i=0; i < products.length; i++) { %>
-         <div class="col mb-4">
+         <div class="col mb-4 ">
             <div class="card h-100">
-                <div class="" id="imgContainer">
+                <div class="justify-content-center" id="imgContainer">
                   <img class="card-img-top" alt="Imagen producto" src= "<%= products[i].ruta_img %>" />
                 </div>
-                <div class="card-body d-flex align-items-end">
+                <div class="card-body justify-content-center">
                   <div class="text-center" id="buttonContainer">
                     <a id="<%= products[i].idProducto %>" href="#" class="card-title text-dark font-weight-bold"> <%= products[i].nombre %> </a>
-                    <p id="precio" class="card-price"> <%= products[i].precio %> </p>
+                    <p id="precio" class="card-price"> $<%= products[i].precio %> </p>
                     <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> <%= products[i].descripcion %> </small></p>
                     <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro<i
                         class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
                     <br>
-                    <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2">Ver detalles <i
+                    <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 ">Ver detalles <i
                         class="icon ion-md-pricetag"></i></button>
                   </div>
                 </div>
@@ -118,15 +118,15 @@
   
       <script>
     const productos = [
-      {nombre: 'Casa de perro', img: '/img/productosEjemplo/casaPerro.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba'},
-      {nombre: 'Colonia para mascota', img: '/img/productosEjemplo/colonia.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
-      {nombre: 'Comida de perro', img: '/img/productosEjemplo/comidaPerro.jpg', descrip: 'Descripción corta.'},
-      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
-      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
-      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
-      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
-      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
-      {nombre: 'Comida de gato', img: '/img/productosEjemplo/comidaGato.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba prueba prueba desscripcion mas larga.'},
+      {nombre: 'Casa de perro', img: '/img/productosEjemplo/casaPerro.jpg', descrip: 'Descripción de la casa, escribo a modo de prueba',precio: 19990},
+      {nombre: 'Comida Hamster ', img: 'https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg ', descrip: 'Comida',precio: 3000},
+      {nombre: 'Comida Hamster ', img: 'https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg ', descrip: 'Comida',precio: 3000},
+      {nombre: 'Comida Hamster ', img: 'https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg ', descrip: 'Comida',precio: 3000},
+      {nombre: 'Comida Hamster ', img: 'https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg ', descrip: 'Comida',precio: 3000},
+      {nombre: 'Comida Hamster ', img: 'https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg ', descrip: 'Comida',precio: 3000},
+      {nombre: 'Comida Hamster ', img: 'https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/a/c/ac-16_mazuri_hamster.jpg ', descrip: 'Comida',precio: 3000},
+      {nombre: 'Comida de Perro', img: 'https://243440-749267-raikfcquaxqncofqfm.stackpathdns.com/tienda/12648-home_default/medium-puppy.jpg', descrip: 'Comida para perro',precio: 26000},
+      {nombre: 'Comida de Perro', img: 'https://243440-749267-raikfcquaxqncofqfm.stackpathdns.com/tienda/12648-home_default/medium-puppy.jpg', descrip: 'Comida para perro',precio: 26000},
     ]
 
     const formulario = document.querySelector('#formulario');
@@ -147,10 +147,10 @@
               <div class="" id="imgContainer">
                 <img class="card-img-top" alt="Imagen producto" src="${producto.img}">
               </div>
-              <div class="card-body d-flex align-items-end">
+              <div class="card-body justify-content-center">
                 <div class="text-center" id="buttonContainer">
                   <a href="#" class="card-title text-dark font-weight-bold"> ${producto.nombre}</a>
-                  <p id="precio" class="card-price"></p>
+                  <p id="precio" class="card-price"> $ ${producto.precio} </p>
                   <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> ${producto.descrip}</small></p>
                   <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro <i
                       class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
