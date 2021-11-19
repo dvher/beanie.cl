@@ -27,6 +27,8 @@ router.get("/carrito.ejs", (req, res) => {
   res.render("carrito");
 });
 
+
+
 //Conexion entre actions y metodos de los controllers
 router.post("/registro", authController.register);
 router.post("/login", authController.login);

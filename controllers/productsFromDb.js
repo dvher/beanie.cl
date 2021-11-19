@@ -16,4 +16,3 @@ exports.getProducts = async (req, res) => {
     console.log(err);
   }
 };
-

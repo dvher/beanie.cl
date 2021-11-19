@@ -2,6 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require('path')
+const cors = require('cors');
+
 
 const app = express();
 
@@ -33,6 +35,19 @@ const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 
+//formato api
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+//cors
+app.use(cors())
+
+//api
+
+const productsAPI = require("./controllers/productsAPI");
+//productsAPI.getProducts(4)
+
+app.post('/productos', productsAPI.getProducts)
 
 app.listen(3000, () => {
   console.log("Server running in http://localhost:3000");
