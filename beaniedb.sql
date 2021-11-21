@@ -253,3 +253,18 @@ COMMIT;
 
 INSERT INTO producto (descripcion,ruta_img,nombre,precio,stock,descuento)
 VALUES ("Comida para perro", "https://243440-749267-raikfcquaxqncofqfm.stackpathdns.com/tienda/12648-home_default/medium-puppy.jpg", "Comida de Perro", 26000,10,10);
+
+create view ventas as select compra.idCompra , cliente.nombre as cliente ,producto.nombre as producto,detalle.cantProducto, compra.monto, compra.direccionEntrega, compra.fecha
+from compra, producto, cliente, detalle
+where compra.idCompra = detalle.idCompra
+and   detalle.idProducto = producto.idProducto
+and   compra.idComprador = cliente.idCliente;
+
+INSERT INTO compra (fecha,monto,direccionEntrega,entrega,idComprador)
+VALUES("7/10/21","6000", "Avenida tengo hambre 444", 0,1);
+
+INSERT INTO detalle (idCompra,idProducto,cantProducto,monto)
+VALUES(1,3,2,6000);
+
+INSERT INTO cliente (nombre,direccion,ciudad,comuna,provincia,telefono,mail)
+VALUES("pepito", "Avenida tengo hambre 444", "santiago", "nunoa", "No caho que es provincia", "77779980","pepito@gmail.com");

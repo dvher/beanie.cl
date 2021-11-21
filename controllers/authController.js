@@ -15,7 +15,6 @@ exports.register = async (req, res) => {
     let passhash = await bcryptjs.hash(pass, 8);
 
     //Query
-  
     connection.query("INSERT INTO usuario SET ?",{ mail: mail, pass: passhash , admin:0},(error, results) => {
         if (error) {
           console.log(error);

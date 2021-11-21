@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<%- include("AdminHeader.ejs") %>
+
+<body>
+    <h1  class="title">Listado de Productos </h1>
+    <!--Tabla-->
+    <div class= "container-lg">
+        <table class="table table-striped table-bordered"  id = "sortTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i < products.length; i++) { %>
+                        <tr>
+                            <td><%= products[i].idProducto %></td>
+                            <td><p><%= products[i].nombre %></p></td>
+                            <td><%= products[i].stock %></td>
+                            <td>$<%= products[i].precio %></td>
+                            <td><a href="/delete/<%=products[i].idProducto %>" class="btn btn-outline-danger">ELIMINAR</a>
+                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Modificar
+                                  </button>
+                                   
+
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+              </table>
+        </div>
+
+    <!--MODAL-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+<!--JS-->
+        <script> 
+            $('#sortTable').DataTable();
+        </script>
+</body>
+</html>

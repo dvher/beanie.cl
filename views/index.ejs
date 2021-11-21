@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
     <a class="navbar-brand" href="#">Beanie.cl</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,8 +63,8 @@
   </nav>
 
 
-  <div id="portada">
-    <img src="../img/perro cut.jpg" id="img-portada" class="img-fluid" alt="perro">
+  <div id="portada" >
+    <img src="../img/perro cut.jpg" class="portada-container" class="img-fluid" alt="perro">
   </div>
 
 
@@ -117,13 +117,7 @@
   <script type="module" src="./js/indexCarrito.js"></script>
   
       <script>
-    const productos = [
-      {nombre: 'Casa de perro', img: '/img/productosEjemplo/casaPerro.jpg', descrip: 'Esta es una prueba de descripción, por lo que esto es una prueba y estoy escribiendo cualquier cosa.',precio: 19990},
-      {nombre: 'Colonia mascotas', img: './img/productosEjemplo/colonia.jpg', descrip: 'Esta es una prueba de descripción, por lo que esto es una prueba y estoy escribiendo cualquier cosa.',precio: 1990},
-      {nombre: 'Comida gato', img: './img/productosEjemplo/comidaGato.jpg', descrip: 'Esta es una prueba de descripción, por lo que esto es una prueba y estoy escribiendo cualquier cosa.',precio: 14990},
-      {nombre: 'Comida perro', img: './img/productosEjemplo/comidaPerro.jpg', descrip: 'Esta es una prueba de descripción, por lo que esto es una prueba y estoy escribiendo cualquier cosa.',precio: 14990},
-    ]
-
+  
     const formulario = document.querySelector('#formulario');
     const boton = document.querySelector('#boton');
     const buscar = document.querySelector('#realiza_busqueda');

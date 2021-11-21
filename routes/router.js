@@ -27,11 +27,22 @@ router.get("/carrito.ejs", (req, res) => {
   res.render("carrito");
 });
 
+router.get("/Admin.ejs",(req, res) => {
+  res.render("Admin");
+});
 
+router.get("/AdminProductos.ejs", productsFromDb.ProductascID,(req, res) => {
+  res.render("AdminProductos");
+});
+
+router.get("/AdminVentas.ejs",productsFromDb.getVentas ,(req, res) => {
+  res.render("AdminVentas");
+});
 
 //Conexion entre actions y metodos de los controllers
 router.post("/registro", authController.register);
 router.post("/login", authController.login);
 router.get("/logout", authController.logout);
+router.get('/delete/:id',productsFromDb.deleteProd);
 
 module.exports = router;
