@@ -47,40 +47,54 @@ exports.deleteProd = async (req,res)=>{
   }
   
 };
-/*
+
 exports.getVentas = async (req,res)=>{
-  connection.query("begin").then((res) => {
-		// next, insert some data into the pets table
-		return connection.query(
-			"create view ventas as select compra.idCompra , cliente.nombre as cliente ,producto.nombre as producto,detalle.cantProducto, compra.monto, compra.direccionEntrega, compra.fecha from compra, producto, cliente, detalle where compra.idCompra = detalle.idCompra and detalle.idProducto = producto.idProducto and compra.idComprador = cliente.idCliente;"
-		)
-	})
-	.then((res) => {
-		// next, insert some data into the food table
-		return connection.query(
-			"select * from ventas;", (error, results)=>{
-        res.render("AdminVentas.ejs", {Ventas:results});
+  try{
+    connection.query("begin; ",(error, results) => {
+      if (error) {
+        console.log(error);
       }
-		)
-	})
-	.then((res) => {
-		// once that's done, run the commit statement to
-		// complete the transaction
-		return client.query("commit")
-	})
-	.then((res) => {
-		// if the transaction completes successfully
-		// log a confirmation statement
-		console.log("transaction completed")
-	})
-	.catch((err) => {
-		// incase there are any errors encountered
-		// rollback the transaction
-		console.error("error while querying:", err)
-		return connection.query("rollback")
-	})
-	.catch((err) => {
-		// incase there is an error when rolling back, log it
-		console.error("error while rolling back transaction:", err)
-	})
-};*/
+      connection.query("create or replace view ventas as select compra.idCompra , cliente.nombre as cliente ,producto.nombre as producto,detalle.cantProducto, compra.monto, compra.direccionEntrega, compra.fecha from compra, producto, cliente, detalle where compra.idCompra = detalle.idCompra and detalle.idProducto = producto.idProducto and compra.idComprador = cliente.idCliente;", (error, result)=>{
+
+        if (error) {
+          console.log(error);
+        }
+
+        connection.query("select * from ventas", (error,results)=>{
+          if (error) {
+            console.log(error);
+          }
+          res.render("AdminVentas.ejs", {ventas:results})
+          connection.query("rollback;")
+        })
+      })
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+exports.updateProd = async(req,res)=>{
+
+  try {
+    //Obteniendo los parametros desde el body
+    const id= req.body.id;
+    const stock = req.body.stock;
+    const precio = req.body.precio;
+    const descripcion = req.body.descripcion;
+
+    //Query
+    connection.query("UPDATE producto SET stock=?,precio=?,descripcion=? WHERE idProducto = ?;",[stock,precio,descripcion,id],(error, results) => {
+        if (error) {
+          console.log(error);
+        }
+        console.log("Producto actualizado");
+          res.redirect("AdminProductos.ejs");
+      });
+
+     
+    
+  } catch (err) {
+    console.log(err);
+  }
+}

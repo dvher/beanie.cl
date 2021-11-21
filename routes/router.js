@@ -35,7 +35,7 @@ router.get("/AdminProductos.ejs", productsFromDb.ProductascID,(req, res) => {
   res.render("AdminProductos");
 });
 
-router.get("/AdminVentas.ejs",productsFromDb.getVentas ,(req, res) => {
+router.get("/AdminVentas.ejs",productsFromDb.getVentas, (req, res) => {
   res.render("AdminVentas");
 });
 
@@ -44,5 +44,6 @@ router.post("/registro", authController.register);
 router.post("/login", authController.login);
 router.get("/logout", authController.logout);
 router.get('/delete/:id',productsFromDb.deleteProd);
+router.post("/update",productsFromDb.updateProd)
 
 module.exports = router;
