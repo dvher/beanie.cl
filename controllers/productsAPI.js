@@ -12,7 +12,7 @@ exports.getProducts = async (req, res) => {
                 console.log(error);
                 }
                 console.log("id por parametro:",id, results)
-                res.send({ status: 'Recibido!' })
+                res.send(results)
             });
         }
         else{

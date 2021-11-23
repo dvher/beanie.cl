@@ -3,6 +3,8 @@ import Carrito from "./carrito.js"
 
 const productos = document.getElementById('productos');
 
+//var Carro = new Carrito()
+
 productos.addEventListener("click", e => {
     
     editarCantidad(e);
@@ -11,6 +13,7 @@ productos.addEventListener("click", e => {
 })
 
 const editarCantidad = e => {
+      const Carro = new Carrito()
     if(e.target.matches('.suma') || e.target.matches('.btn-plus')){ //para sumar 1 cantidad
           var idProductoSeleccionado;
           if(e.target.matches('.suma') == true){
@@ -36,6 +39,7 @@ const editarCantidad = e => {
                 Carro.restarCantidad(idProductoSeleccionado);
           }
     }
+    updateTotal()
 }
 
 const eliminarProducto = e => {
@@ -43,8 +47,17 @@ const eliminarProducto = e => {
     var idProductoSeleccionado;
     if (e.target.matches('.eliminar') == true) {
           idProductoSeleccionado = e.target.parentElement.parentElement.parentElement.querySelector('a').id;
+          console.log("Id producto a eliminar: ",idProductoSeleccionado)
           Carro.quitar(idProductoSeleccionado);
           let node = e.target.parentElement.parentElement.parentElement
           node.remove()
     }
+    updateTotal()
 }
+
+const updateTotal = () => {
+      const Carro = new Carrito()
+      console.log(Carro.montoTotal())
+      document.getElementById("span-total").textContent = Carro.montoTotal()
+}
+

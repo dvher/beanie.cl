@@ -44,7 +44,9 @@ export default class Carrito {
     }
 
     quitar(id) {
-          const indice = this.productos.findIndex(p => p.id === id);
+          console.log("id ingresado clase carrito: ",id)
+          const indice = this.productos.findIndex(p => p.id == id);
+          console.log("indice clase carrito: ",indice)
           if (indice != -1) {
                 this.productos.splice(indice, 1);
                 this.guardar();
@@ -66,5 +68,15 @@ export default class Carrito {
 
     obtenerConteo() {
           return this.productos.length;
+    }
+    montoTotal(){
+          let total = 0
+          const data = this.obtener()
+          for (let i = 0; i < data.length; i++) {
+            //console.log(data[i].precio)
+            //console.log(data[i].cantidad)
+            total += data[i].precio*data[i].cantidad
+          }
+          return total
     }
 }
