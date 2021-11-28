@@ -79,4 +79,8 @@ export default class Carrito {
           }
           return total
     }
+    vaciar(){
+      localStorage.clear();
+      this.productos = this.obtener();
+    }
 }
