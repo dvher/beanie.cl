@@ -26,7 +26,7 @@ const pagar = () => {
                 cant: cantProd,
             }
           }).then(function(response){
-
+            location.reload();
 
         })
 
