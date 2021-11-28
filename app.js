@@ -49,9 +49,9 @@ const productsAPI = require("./controllers/productsAPI");
 
 const allProducts= require("./controllers/allProducts");
 
-app.get('/allProducts', allProducts.allProducts)
-
 app.post('/productos', productsAPI.getProducts)
+
+app.get('/allProducts', allProducts.allProducts)
 
 app.listen(3000, () => {
   console.log("Server running in http://localhost:3000");
