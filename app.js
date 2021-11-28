@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require('path')
 const cors = require('cors');
+const bodyParser = require("body-parser");
 
 
 const app = express();
@@ -35,10 +36,6 @@ const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 
-//formato api
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
-
 //cors
 app.use(cors())
 
@@ -56,7 +53,6 @@ app.post('/productos', productsAPI.getProducts)
 app.get('/allProducts', allProducts.allProducts)
 
 app.post('/pago', pago.pago)
-
 
 app.listen(3000, () => {
   console.log("Server running in http://localhost:3000");

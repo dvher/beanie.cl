@@ -3,7 +3,8 @@ const connection = require("../database/db");
 exports.getComentarios = async (req, res) => {
     try {
         //Query
-
+        console.log(req.headers)
+        console.log(req.body)
         const id = req.body.id;
 
         if(!id){
@@ -14,7 +15,7 @@ exports.getComentarios = async (req, res) => {
 
         }
         
-        connection.query(`SELECT * FROM opinion WHERE idProd = ${id}`,(error, results) => {
+        connection.query(`SELECT * FROM opinion WHERE idProd = ${id};`,(error, results) => {
             if (error) {
                 console.log(error);
             }

@@ -5,6 +5,7 @@ const router = express.Router();
 const connection = require("../database/db");
 const authController = require("../controllers/authController");
 const productsFromDb = require("../controllers/productsFromDb");
+const getComms = require("../controllers/getComms");
 
 //Rutas de las vistas
 router.get("/", authController.requiteAuth,productsFromDb.getProducts,(req, res) => {
@@ -38,6 +39,14 @@ router.get("/AdminProductos.ejs", productsFromDb.ProductascID,(req, res) => {
 router.get("/AdminVentas.ejs",productsFromDb.getVentas, (req, res) => {
   res.render("AdminVentas");
 });
+
+router.get("*", (req, res) => {
+  
+  res.render("404");
+
+})
+
+router.post("/comentarios", getComms.getComentarios);
 
 //Conexion entre actions y metodos de los controllers
 router.post("/registro", authController.register);

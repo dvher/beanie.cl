@@ -7,7 +7,7 @@ exports.getProducts = async (req, res) => {
         const id =  req.body.id
         console.log("idConsultado: ", id);
         if(Object.entries(id).length !== 0){
-            connection.query(`SELECT * FROM producto where idProducto = ${id}`,(error, results) => {
+            connection.query(`SELECT * FROM producto where idProducto = ${id};`,(error, results) => {
                 if (error) {
                 console.log(error);
                 res.status(500).send("Error en la consulta");
@@ -23,6 +23,7 @@ exports.getProducts = async (req, res) => {
     } 
     catch (err) {
         console.log(err);
+        res.send({ status: 'Error' });
     }
 };
 

@@ -137,7 +137,7 @@ INSERT INTO `producto` (`idProducto`, `descripcion`, `ruta_img`, `nombre`, `prec
 CREATE TABLE `usuario` (
   `mail` varchar(50) NOT NULL,
   `pass` varchar(255) NOT NULL,
-  `admin` bit(1) NOT NULL
+  `admin` bool NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
