@@ -47,6 +47,10 @@ app.use(cors())
 const productsAPI = require("./controllers/productsAPI");
 //productsAPI.getProducts(4)
 
+const allProducts= require("./controllers/allProducts");
+
+app.get('/allProducts', allProducts.allProducts)
+
 app.post('/productos', productsAPI.getProducts)
 
 app.listen(3000, () => {
