@@ -84,12 +84,6 @@ router.get("/Producto.ejs/:id", (req, res) => {
 
 })
 
-router.get("*", (req, res) => {
-  
-  res.render("404");
-
-})
-
 router.post("/comentarios", getComms.getComentarios);
 
 //Conexion entre actions y metodos de los controllers
@@ -99,5 +93,11 @@ router.get("/logout", authController.logout);
 router.get('/delete/:id',productsFromDb.deleteProd);
 router.post("/update",productsFromDb.updateProd)
 router.post("/insert",productsFromDb.InsertProd)
+
+router.get("*", (req, res) => {
+  
+  res.render("404");
+
+});
 
 module.exports = router;

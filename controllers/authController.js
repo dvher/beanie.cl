@@ -140,5 +140,5 @@ exports.requiteAuth = function(req,res,next){
 
 exports.logout = (req,res)=>{
   res.clearCookie('jwt')
-  return res.redirect('/')
+  res.redirect('/');
 }

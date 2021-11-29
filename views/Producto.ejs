@@ -44,7 +44,7 @@ if(locals[0]){
 <body>
   <!--NavBar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Beanie.cl</a>
+    <a class="navbar-brand" href="/">Beanie.cl</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -94,7 +94,7 @@ if(locals[0]){
             <div class="card-body">
                 <div class="row">
                 <div class="col-12 col-md-6">
-                    <img src=<%= producto.ruta_img %> class="img-fluid" alt="Responsive image">
+                    <img src=<%= `${producto.ruta_img.startsWith('./') ? '.' : ''}${producto.ruta_img}` %> class="img-fluid" alt="Responsive image">
                 </div>
                 <div class="col-12 col-md-6">
                     <h1><%=producto.nombre%></h1>

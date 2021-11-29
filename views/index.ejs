@@ -86,13 +86,13 @@
                 </div>
                 <div class="card-body justify-content-center">
                   <div class="text-center" id="buttonContainer">
-                    <a id="<%= products[i].idProducto %>" href="#" class="card-title text-dark font-weight-bold"> <%= products[i].nombre %> </a>
+                    <a id="<%= products[i].idProducto %>" href="Producto.ejs/<%=products[i].idProducto%>" class="card-title text-dark font-weight-bold"> <%= products[i].nombre %> </a>
                     <p id="precio" class="card-price"> $<%= products[i].precio %> </p>
                     <p id="descripcion" class="card-text mt-1 text-justifycenter"><small> <%= products[i].descripcion %> </small></p>
                     <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro<i
                         class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
                     <br>
-                    <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 ">Ver detalles <i
+                    <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 " onclick="window.location += 'Producto.ejs/' + <%= products[i].idProducto %>">Ver detalles <i
                         class="icon ion-md-pricetag"></i></button>
                   </div>
                 </div>

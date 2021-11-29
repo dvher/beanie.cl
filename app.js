@@ -39,20 +39,6 @@ const $ = require( "jquery" )( window );
 //cors
 app.use(cors())
 
-//api
-
-const productsAPI = require("./controllers/productsAPI");
-//productsAPI.getProducts(4)
-
-const allProducts= require("./controllers/allProducts");
-
-const pago= require("./controllers/pago");
-
-app.post('/productos', productsAPI.getProducts)
-
-app.get('/allProducts', allProducts.allProducts)
-
-app.post('/pago', pago.pago)
 
 app.listen(3000, () => {
   console.log("Server running in http://localhost:3000");
