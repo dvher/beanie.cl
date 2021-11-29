@@ -40,6 +40,21 @@ router.get("/AdminVentas.ejs",productsFromDb.getVentas, (req, res) => {
   res.render("AdminVentas");
 });
 
+
+//api
+const productsAPI = require("../controllers/productsAPI");
+//productsAPI.getProducts(4)
+
+const allProducts= require("../controllers/allProducts");
+
+const pago= require("../controllers/pago");
+
+router.post('/productos', productsAPI.getProducts)
+
+router.get('/allProducts', allProducts.allProducts)
+
+router.post('/pago', pago.pago)
+
 router.get("/Producto.ejs/:id", (req, res) => {
 
   try {
