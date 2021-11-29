@@ -40,6 +40,35 @@ router.get("/AdminVentas.ejs",productsFromDb.getVentas, (req, res) => {
   res.render("AdminVentas");
 });
 
+router.get("/Producto.ejs/:id", (req, res) => {
+
+  try {
+    //Query
+    const id =  req.body.id
+    console.log("idConsultado: ", id);
+    if(Object.entries(id).length !== 0){
+        connection.query(`SELECT * FROM producto where idProducto = ${id};`,(error, results) => {
+            if (error) {
+            console.log(error);
+            res.render("404");
+            }else{
+                console.log("id por parametro:",id, results)
+                res.render("Producto", results)
+            }
+        });
+    }
+    else{
+        res.send({ status: 'Error, id vacio' })
+    }
+  }catch (err) {
+      console.log(err);
+      res.render("404");
+
+  }
+
+
+})
+
 router.get("*", (req, res) => {
   
   res.render("404");
