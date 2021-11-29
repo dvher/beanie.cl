@@ -60,10 +60,11 @@ exports.getVentas = async (req,res)=>{
           console.log(error);
         }
 
-        connection.query("select * from ventas", (error,results)=>{
+        connection.query("select * from ventas;", (error,results)=>{
           if (error) {
             console.log(error);
           }
+          console.log(results);
           res.render("AdminVentas.ejs", {ventas:results})
           connection.query("rollback;")
         })
@@ -110,7 +111,7 @@ exports.InsertProd = async(req,res)=>{
     const link = req.body.link;
     const descuento = req.body.descuento;
     //Query
-    connection.query("Insert into producto (`descripcion`, `ruta_img`, `nombre`, `precio`, `stock`, `descuento`) Values ? ;",[descripcion,link,nombre,precio,stock,descuento],(error, results) => {
+    connection.query(`Insert into producto (descripcion, ruta_img, nombre, precio, stock, descuento) Values (?,?,?,?,?,?) ;`,[descripcion,link,nombre,precio,stock,descuento],(error, results) => {
         if (error) {
           console.log(error);
         }

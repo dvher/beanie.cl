@@ -51,7 +51,7 @@
                     <button id="" type="button" class="btn btn-warning btn-sm mt-1">Añadir al carro<i
                         class="icon ion-md-cart"></i> <i class="icon ion-md-add"></i></button>
                     <br>
-                    <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 " href="/Productos.ejs/<%=products[i].idProducto%>">Ver detalles <i
+                    <button id="ver-detalles" type="button" class="btn btn-info btn-sm mt-2 " onclick="window.location += 'Producto.ejs/' + '<%= products[i].idProducto %>'">Ver detalles <i
                         class="icon ion-md-pricetag"></i></button>
                   </div>
                 </div>

@@ -243,7 +243,7 @@ ALTER TABLE `opinion`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -260,11 +260,11 @@ where compra.idCompra = detalle.idCompra
 and   detalle.idProducto = producto.idProducto
 and   compra.idComprador = cliente.idCliente;
 
+INSERT INTO cliente (nombre, direccion, ciudad, comuna, provincia, telefono, mail)
+VALUES ("Juan", "Calle falsa 123", "Santiago", "La Reina", "Santiago", "123456789", "Juan@gmail.com");
+
 INSERT INTO compra (fecha,monto,direccionEntrega,entrega,idComprador)
-VALUES("7/10/21","6000", "Avenida tengo hambre 444", 0,1);
+VALUES("7/10/21",20000, "Calle falsa 123", 0,1);
 
 INSERT INTO detalle (idCompra,idProducto,cantProducto,monto)
-VALUES(1,3,2,6000);
-
-INSERT INTO cliente (nombre,direccion,ciudad,comuna,provincia,telefono,mail)
-VALUES("pepito", "Avenida tengo hambre 444", "santiago", "nunoa", "No caho que es provincia", "77779980","pepito@gmail.com");
+VALUES(1,3,2,20000);

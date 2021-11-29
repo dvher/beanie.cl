@@ -37,7 +37,7 @@ router.get("/AdminProductos.ejs", productsFromDb.ProductascID, productsFromDb.In
 });
 
 router.get("/AdminVentas.ejs",productsFromDb.getVentas, (req, res) => {
-  res.render("AdminVentas");
+  res.render("AdminVentas", ventas);
 });
 
 

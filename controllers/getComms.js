@@ -48,15 +48,16 @@ exports.postComentario = async (req, res) => {
         connection.query(`INSERT INTO opinion (idOpinion, idCliente, idProd, comentario, valoracion) VALUES (${idOpinion}, ${idCliente}, ${idProducto}, '${comentario}', ${valoracion});`,(error, results) => {
             if (error) {
                 console.log(error);
-                res.redirect('/');
+                res.redirect(`/Producto.ejs/${idProducto}`);
             }
             console.log('success');
             console.log(results)
-            res.redirect('/');
+            res.redirect(`/Producto.ejs/${idProducto}`);
         });
     } 
     catch (err) {
         console.log(err);
-        res.redirect('/');
+        res.redirect(`/Producto.ejs/${idProducto}`);
+
     }
 }
