@@ -85,6 +85,7 @@ router.get("/Producto.ejs/:id", (req, res) => {
 })
 
 router.post("/comentarios", getComms.getComentarios);
+router.post("/comentar", getComms.postComentario);
 
 //Conexion entre actions y metodos de los controllers
 router.post("/registro", authController.register);
