@@ -28,16 +28,25 @@ router.get("/carrito.ejs", (req, res) => {
   res.render("carrito");
 });
 
-router.get("/Admin.ejs",(req, res) => {
-  res.render("Admin");
+router.get("/Admin.ejs",authController.login,authController.requiteAuth,(req, res) => {
+  if(Admin ){
+    res.render("Admin");
+  }
+  
 });
 
-router.get("/AdminProductos.ejs", productsFromDb.ProductascID, productsFromDb.InsertProd,(req, res) => {
-  res.render("AdminProductos");
+router.get("/AdminProductos.ejs",authController.requiteAuth, productsFromDb.ProductascID, productsFromDb.InsertProd,(req, res) => {
+  if(user){
+   res.render("AdminProductos"); 
+  }
+  
 });
 
-router.get("/AdminVentas.ejs",productsFromDb.getVentas, (req, res) => {
-  res.render("AdminVentas", ventas);
+router.get("/AdminVentas.ejs",productsFromDb.getVentas, authController.requiteAuth,(req, res) => {
+  if(user){
+    res.render("AdminVentas", ventas);
+  }
+  
 });
 
 

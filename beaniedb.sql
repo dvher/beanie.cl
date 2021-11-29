@@ -268,3 +268,5 @@ VALUES("7/10/21",20000, "Calle falsa 123", 0,1);
 
 INSERT INTO detalle (idCompra,idProducto,cantProducto,monto)
 VALUES(1,3,2,20000);
+
+INSERT INTO usuario (mail,pass,admin) VALUES ("Administrador@mail.cl", "adminpass", true);

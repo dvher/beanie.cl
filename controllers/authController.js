@@ -59,7 +59,23 @@ exports.login = async (req, res) => {
 
     } else {
       connection.query("SELECT * FROM usuario WHERE mail= ?",[mail],async (error, results) => {
-          if (results.length == 0 ||!(await bcryptjs.compare(pass, results[0].pass))) {
+       
+
+        if(results[0].admin == 1 && (await bcryptjs.compare(pass, results[0].pass))){
+          const id = results[0].mail
+            const token = jwt.sign({id:id}, process.env.JWT_SECRETO,{
+              expiresIn:process.env.JWT_EXPIRACION
+            })
+            //console.log("token:" + token +" usuario: "+ mail)
+            const cookiesOptions = {
+              expires: new Date(Date.now()+process.env.JWT_COOKIE_EXPIRACION * 24 * 60 * 60 * 1000),
+              httpOnly:true
+            }
+            res.render("Admin.ejs", {Admin:results[0].admin})
+
+        }
+        
+        if (results.length == 0 ||!(await bcryptjs.compare(pass, results[0].pass))) {
             res.render("login.ejs", {
               alert: true,
               alertTitle: "Error",
