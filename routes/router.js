@@ -44,7 +44,7 @@ router.get("/Producto.ejs/:id", (req, res) => {
 
   try {
     //Query
-    const id =  req.body.id
+    const id =  req.params.id
     console.log("idConsultado: ", id);
     if(Object.entries(id).length !== 0){
         connection.query(`SELECT * FROM producto where idProducto = ${id};`,(error, results) => {
@@ -58,7 +58,7 @@ router.get("/Producto.ejs/:id", (req, res) => {
         });
     }
     else{
-        res.send({ status: 'Error, id vacio' })
+        res.render("404");
     }
   }catch (err) {
       console.log(err);
