@@ -32,7 +32,7 @@ router.get("/Admin.ejs",(req, res) => {
   res.render("Admin");
 });
 
-router.get("/AdminProductos.ejs", productsFromDb.ProductascID,(req, res) => {
+router.get("/AdminProductos.ejs", productsFromDb.ProductascID, productsFromDb.InsertProd,(req, res) => {
   res.render("AdminProductos");
 });
 
@@ -98,5 +98,6 @@ router.post("/login", authController.login);
 router.get("/logout", authController.logout);
 router.get('/delete/:id',productsFromDb.deleteProd);
 router.post("/update",productsFromDb.updateProd)
+router.post("/insert",productsFromDb.InsertProd)
 
 module.exports = router;

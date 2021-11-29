@@ -98,3 +98,29 @@ exports.updateProd = async(req,res)=>{
     console.log(err);
   }
 }
+
+exports.InsertProd = async(req,res)=>{
+
+  try {
+    //Obteniendo los parametros desde el body
+    const nombre = req.body.nombre;
+    const stock = req.body.stock;
+    const precio = req.body.precio;
+    const descripcion = req.body.descripcion;
+    const link = req.body.link;
+    const descuento = req.body.descuento;
+    //Query
+    connection.query("Insert into producto (`descripcion`, `ruta_img`, `nombre`, `precio`, `stock`, `descuento`) Values ? ;",[descripcion,link,nombre,precio,stock,descuento],(error, results) => {
+        if (error) {
+          console.log(error);
+        }
+        console.log("Producto insertado");
+          res.redirect("AdminProductos.ejs");
+      });
+
+     
+    
+  } catch (err) {
+    console.log(err);
+  }
+}
