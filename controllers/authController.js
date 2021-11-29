@@ -15,15 +15,27 @@ exports.register = async (req, res) => {
     let passhash = await bcryptjs.hash(pass, 8);
 
     //Query
-    connection.query("INSERT INTO usuario SET ?",{ mail: mail, pass: passhash , admin:0},(error, results) => {
-        if (error) {
-          console.log(error);
-        }
+    connection.query("INSERT INTO usuario SET ?",{ mail: mail, pass: passhash , admin: false},(error, results) => {
+        
+      if (error ) {
+          res.render("Registro.ejs", {
+            alert: true,
+            alertTitle: "Error",
+            alertMessage: "El usuario ya existe",
+            alertIcon: "error",
+            showConfirmButton: true,
+            timer: false,
+            ruta: "Registro.ejs",
+          });
+          console.log(error)
+          console.log("Usuario no registrado")
+        }else{
           res.redirect("login.ejs");
+          console.log("Usuario registrado")
+        }
+          
       });
 
-     
-    
   } catch (err) {
     console.log(err);
   }
