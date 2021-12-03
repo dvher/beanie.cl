@@ -58,8 +58,7 @@ exports.login = async (req, res) => {
       });
 
     } else {
-      connection.query("SELECT * FROM usuario WHERE mail= ?",[mail],async (error, results) => {
-       
+      connection.query("SELECT * FROM usuario WHERE mail= ?;",[mail],async (error, results) => {       
 
         if(results[0].admin == 1 && (await bcryptjs.compare(pass, results[0].pass))){
           const id = results[0].mail
