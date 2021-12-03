@@ -99,21 +99,21 @@
                       </div>
                       <div class="modal-body">
                         <form method="POST" name="myform" role="form" action="/update">
-                          <input name="id" type="hidden" value="<%= products[i].idProducto %>">
+                          <input name="id" type="number" value="<%= products[i].idProducto %>">
                           <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Stock</label>
                             <input type="number" class="form-control" id="stock" name="stock"
-                              value="<%= products[i].stock %>">
+                              >
                           </div>
                           <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Precio</label>
                             <input type="number" class="form-control" id="precio" name="precio"
-                              value="<%= products[i].precio %>">
+                              >
                           </div>
                           <div class="mb-3">
                             <label for="message-text" class="col-form-label">Descripcion</label>
                             <textarea class="form-control" id="descripcion" name="descripcion" type="text"
-                              value="<%= products[i].descripcion %>"></textarea>
+                              ></textarea>
                           </div>
                           <button type="submit" class="btn btn-primary">Guardar</button>
 
@@ -134,14 +134,7 @@
 
     <!--JS-->
     <script>
-      var stockinput = document.getElementById('stock');
-      var precioinput = document.getElementById('precio');
-      var descripcioninput = document.getElementById('descripcion');
-
-      if (stockinput.value.length == 0 || precioinput.value.length == 0 || descripcioninput.value.length == 0)
-        stockinput.value = document.getElementById('stock').value;
-      precioinput.value = document.getElementById('precio').value;
-      descripcioninput.value = document.getElementById('descripcion').value;
+      
 
       $('#sortTable').DataTable();
     </script>
